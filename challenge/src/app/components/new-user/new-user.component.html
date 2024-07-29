@@ -1,0 +1,170 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg space-y-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Column 1 -->
+    <div class="flex flex-col">
+      <label for="firstName" class="mb-1 text-sm font-medium text-gray-700">First Name</label>
+      <input
+        id="firstName"
+        formControlName="firstName"
+        type="text"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('firstName')?.invalid && userForm.get('firstName')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('firstName')?.errors?.['required']">First Name is required.</small>
+        <small *ngIf="userForm.get('firstName')?.errors?.['minlength']">First Name must be at least 2 characters long.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="lastName" class="mb-1 text-sm font-medium text-gray-700">Last Name</label>
+      <input
+        id="lastName"
+        formControlName="lastName"
+        type="text"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('lastName')?.errors?.['required']">Last Name is required.</small>
+        <small *ngIf="userForm.get('lastName')?.errors?.['minlength']">Last Name must be at least 2 characters long.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="age" class="mb-1 text-sm font-medium text-gray-700">Age</label>
+      <input
+        id="age"
+        formControlName="age"
+        type="number"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('age')?.invalid && userForm.get('age')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('age')?.errors?.['required']">Age is required.</small>
+        <small *ngIf="userForm.get('age')?.errors?.['min']">Age must be at least 18.</small>
+        <small *ngIf="userForm.get('age')?.errors?.['max']">Age must be at most 100.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="email" class="mb-1 text-sm font-medium text-gray-700">Email</label>
+      <input
+        id="email"
+        formControlName="email"
+        type="email"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</small>
+        <small *ngIf="userForm.get('email')?.errors?.['email']">Enter a valid email address.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="phone" class="mb-1 text-sm font-medium text-gray-700">Phone</label>
+      <input
+        id="phone"
+        formControlName="phone"
+        type="tel"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('phone')?.invalid && userForm.get('phone')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('phone')?.errors?.['required']">Phone number is required.</small>
+        <small *ngIf="userForm.get('phone')?.errors?.['pattern']">Enter a valid phone number.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="username" class="mb-1 text-sm font-medium text-gray-700">Username</label>
+      <input
+        id="username"
+        formControlName="username"
+        type="text"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('username')?.invalid && userForm.get('username')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('username')?.errors?.['required']">Username is required.</small>
+        <small *ngIf="userForm.get('username')?.errors?.['minlength']">Username must be at least 4 characters long.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="password" class="mb-1 text-sm font-medium text-gray-700">Password</label>
+      <input
+        id="password"
+        formControlName="password"
+        type="password"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('password')?.errors?.['required']">Password is required.</small>
+        <small *ngIf="userForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="height" class="mb-1 text-sm font-medium text-gray-700">Height</label>
+      <input
+        id="height"
+        formControlName="height"
+        type="number"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('height')?.invalid && userForm.get('height')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('height')?.errors?.['required']">Height is required.</small>
+        <small *ngIf="userForm.get('height')?.errors?.['min']">Height must be at least 0.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="weight" class="mb-1 text-sm font-medium text-gray-700">Weight</label>
+      <input
+        id="weight"
+        formControlName="weight"
+        type="number"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('weight')?.invalid && userForm.get('weight')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('weight')?.errors?.['required']">Weight is required.</small>
+        <small *ngIf="userForm.get('weight')?.errors?.['min']">Weight must be at least 0.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="university" class="mb-1 text-sm font-medium text-gray-700">University</label>
+      <input
+        id="university"
+        formControlName="university"
+        type="text"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="userForm.get('university')?.invalid && userForm.get('university')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('university')?.errors?.['required']">University is required.</small>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="role" class="mb-1 text-sm font-medium text-gray-700">Role</label>
+      <select
+        id="role"
+        formControlName="role"
+        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <option value="">Select a role</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+      <div *ngIf="userForm.get('role')?.invalid && userForm.get('role')?.touched" class="mt-1 text-red-600 text-sm">
+        <small *ngIf="userForm.get('role')?.errors?.['required']">Role is required.</small>
+      </div>
+    </div>
+
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="userForm.invalid"
+    class="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-blue-200"
+  >
+    Submit
+  </button>
+</form>

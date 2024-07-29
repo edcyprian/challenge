@@ -1,0 +1,47 @@
+<main class="container mx-auto px-4 py-8 mt-20">
+
+  <div class="flex flex-col md:flex-row justify-between mt-10 mb-5 items-center">
+    <div>
+      <p class="font-semibold text-2xl md:text-3xl text-center">Charts</p>
+    </div>
+
+    <div>
+      <label for="chartType">Select Chart Type:</label>
+      <select id="chartType" (change)="onChartTypeChange($event)">
+        <option value="pie">Pie Chart</option>
+        <option value="bar">Bar Chart</option>
+        <!-- <option value="line">Line Chart</option> -->
+      </select>
+    </div>
+    <div class="flex gap-1">
+      <button
+        class="text-white font-semibold border border-indigo-600 py-2 px-6 rounded inline-flex items-center bg-indigo-600 hover:bg-indigo-500"
+        (click)="addNewUser()">
+        Add User
+      </button>
+      <a routerLink="../table" type="button"
+        class="flex items-center text-indigo-700 border border-indigo-600 py-2 px-6 gap-2 rounded ">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+        </svg>
+        <span>
+          Back
+        </span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="bg-white rounded-3xl mx-4 md:mx-auto max-w-screen-md border-2 border-gray-800 mt-16">
+    <div class="px-8 py-6 md:p-10">
+      @if(selectedChartType === 'pie'){
+      <app-pie></app-pie>
+      }@else if(selectedChartType === 'bar'){
+      <app-bar></app-bar>
+      }@else{
+      <app-line></app-line>
+      }
+    </div>
+  </div>
+</main>

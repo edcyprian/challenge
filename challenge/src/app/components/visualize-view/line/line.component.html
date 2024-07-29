@@ -1,0 +1,20 @@
+<div class="flex md:justify-end justify-start">
+  <select (change)="onSelectChange($event)">
+    <option value="roleDistribution" default>Role Distribution</option>
+    <option value="ageDistribution">Age Distribution</option>
+    <option value="bloodGroupDistribution">Blood Group Distribution</option>
+  </select>
+</div>
+
+
+<div class="chart-container" style="position: relative; height:40vh;height: 45vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;">
+<canvas baseChart
+    [type]="'line'"
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend">
+  </canvas>
+</div>
