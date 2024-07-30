@@ -1,6 +1,10 @@
 
 ## File Structure
 
+I didn't get great code coverage nor accessibility because of time restriction
+
+I had simple components for each core functionality. if there was more complexity would have considered using domain module approach. 
+
 - **`components/`**: Contains reusable UI components.
   - **`user-table/`**: Component for displaying user data in a table format.
   - **`visual-components/`**: Contains various visual components for data representation:
